@@ -1,10 +1,10 @@
 import os
 
-from main import create_app
+from app import create_app
 from config import app_config
 
 
-app = create_app(app_config[os.getenv('FLASK_CONFIG')])
+app = create_app(app_config[os.getenv('FLASK_CONFIG', default='development')])
 
 from main import mainbp as main_blueprint
 app.register_blueprint(main_blueprint)

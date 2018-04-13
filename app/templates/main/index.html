@@ -1,8 +1,16 @@
 {% extends "base.html" %}
-{% block page_content %}
-<div class="uk-container">
-    <article class="uk-article">
-        <h1 class="uk-article-header">Hello, world!</h1>
-    </article>
+{% block hero_footer %}
+<div class="hero-foot">
+    <nav class="tabs">
+        <div class="container">
+            <ul>
+                <li class="is-active"><a>News</a></li>
+                <li class="is-active"><a>Events</a></li>
+                <li class="is-active"><a>Overview</a></li>
+            </ul>
+        </div>
+    </nav>
 </div>
+{% endblock %}
+{% block page_content %}
 {% endblock %}

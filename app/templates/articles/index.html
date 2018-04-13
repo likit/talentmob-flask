@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block hero_footer %}
+{% include "articles/nav.html" %}
+{% endblock %}
+{% block page_content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Articles</h1>
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.11/jquery.tinymce.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/wysiwyg.js') }}"></script>
+    <!-- <script>tinymce.init({ selector:'textarea' });</script> -->
+    <script>
+        var ArticleModel = function() {
+            var self = this;
+            self.content = ko.observable();
+            self.title = ko.observable();
+        }
+        var ar = new ArticleModel();
+        ko.applyBindings(ar);
+    </script>
+{% endblock %}

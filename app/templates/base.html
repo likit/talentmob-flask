@@ -20,25 +20,57 @@
         <meta name="msapplication-tap-highlight" content="no">
         <title>Talent Mobility Program, THAIST Thailand</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/css/uikit.min.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulmaswatch.min.css') }}" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
     <body>
-        {% block navbar %}
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="">Home</a></li>
-                    <li class="uk-parent"><a href="">Network</a></li>
-                    <li><a href=""></a></li>
-                </ul>
+        <section class="hero is-primary">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <span class="icon is-large">
+                                <i class="fa fa-comments fa-2x"></i>
+                            </span>
+                            <h1 class="title is-size-2">TM</h1>
+                        </div>
+                        <div class="navbar-end">
+                            <div class="navbar-menu">
+                                <a class="navbar-item" href="/">Home</a>
+                                <a class="navbar-item" href="/">Network</a>
+                                <a class="navbar-item">
+                                    <span class="icon">
+                                        <i class="fa fa-language"></i>
+                                    </span>
+                                    <span>Thai</span>
+                                </a>
+                                <span class="navbar-item">
+                                    <a class="button is-primary is-inverted is-rounded">
+                                        <span class="icon">
+                                            <i class="fa fa-user-circle"></i>
+                                        </span>
+                                        <span>Log in</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </nav>
-        {% endblock %}
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Talent Mobility Online Community</h1>
+                    <h1 class="subtitle">Where Talents Meet An Industry.</h1>
+                </div>
+            </div>
+            {% block hero_footer %}
+            {% endblock %}
+        </section>
         {% block page_content %}
         {% endblock %}
         {% block scripts %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit-icons.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
         {% endblock %}
     </body>
 </html>
